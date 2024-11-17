@@ -1,0 +1,7 @@
+{
+  "hw": "n100",
+  "belacoder_path": "/opt/belacoder/",
+  "srtla_path": "/opt/srtla/",
+  "bitrate_file": "/tmp/belacoder_br",
+  "ips_file": "/tmp/srtla_ips"
+}
