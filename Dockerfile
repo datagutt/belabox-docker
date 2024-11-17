@@ -63,4 +63,5 @@ EXPOSE 80
 # Start the belaUI web interface
 COPY entrypoint.sh /opt/belaUI/entrypoint.sh
 COPY setup.json /opt/belaUI/setup.json
+RUN chmod +x /opt/belaUI/entrypoint.sh
 ENTRYPOINT ["/opt/belaUI/entrypoint.sh"]
