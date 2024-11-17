@@ -1,6 +1,7 @@
 # Use Ubuntu 24.04 LTS as the base image
 FROM jrei/systemd-ubuntu:24.04
 ENV container=docker
+ENV DBUS_SYSTEM_BUS_ADDRESS unix:path=/host/run/dbus/system_bus_socket
 VOLUME /sys/fs/cgroup /run /tmp
 
 # Update and install necessary packages
