@@ -22,3 +22,5 @@ services:
     # Uncomment if network_mode is not host
     #ports:
     #- "8080:80"
+volumes:
+  belaUI:
