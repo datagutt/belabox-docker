@@ -3,13 +3,10 @@ FROM ubuntu:24.04
 
 # Update and install necessary packages
 RUN apt-get update && apt-get dist-upgrade -y && \
-	apt-get install -y cmake network-manager ifupdown net-tools wget isc-dhcp-client resolvconf nano build-essential git tcl libgl1 libglx-mesa0 nodejs npm usb-modeswitch libgstreamer1.0-dev libgl1-mesa-dri libgstreamer-plugins-base1.0-dev && \
+	apt-get install -y modemmanager cmake network-manager ifupdown net-tools wget isc-dhcp-client resolvconf nano build-essential git tcl libgl1 libglx-mesa0 nodejs npm usb-modeswitch libgstreamer1.0-dev libgl1-mesa-dri libgstreamer-plugins-base1.0-dev && \
 	apt-get install -y libssl-dev libasound2t64 libgtk-3-0 libxtst6 libpulse0 avahi-utils alsa-base alsa-utils pulseaudio-utils && \
 	rm -rf /var/lib/apt/lists/*
 
-# Install modem manager from snap
-RUN apt-get update && apt-get install -y snapd && \
-	snap install modem-manager
 # Add Google DNS servers
 RUN mkdir -p /etc/resolvconf/resolv.conf.d
 RUN printf "\nnameserver 8.8.8.8\nnameserver 8.8.4.4\n" | tee -a /etc/resolvconf/resolv.conf.d/head
