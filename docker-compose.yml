@@ -13,3 +13,5 @@ services:
       - /etc/machine-id:/etc/machine-id
     environment:
       - DISPLAY=$DISPLAY
+    ports:
+      - "8080:80"
