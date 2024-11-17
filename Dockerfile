@@ -3,7 +3,7 @@ FROM ubuntu:24.04
 
 # Update and install necessary packages
 RUN apt-get update && apt-get dist-upgrade -y && \
-	apt-get install -y cmake network-manager ifupdown net-tools wget isc-dhcp-client resolvconf nano build-essential git tcl libgl1 libglx-mesa0 nodejs npm usb-modeswitch libgstreamer1.0-dev libgl1-mesa-dri libgstreamer-plugins-base1.0-dev && \
+	apt-get install -y modem-manager cmake network-manager ifupdown net-tools wget isc-dhcp-client resolvconf nano build-essential git tcl libgl1 libglx-mesa0 nodejs npm usb-modeswitch libgstreamer1.0-dev libgl1-mesa-dri libgstreamer-plugins-base1.0-dev && \
 	apt-get install -y libssl-dev libasound2t64 libgtk-3-0 libxtst6 libpulse0 avahi-utils alsa-base alsa-utils pulseaudio-utils && \
 	rm -rf /var/lib/apt/lists/*
 
@@ -40,7 +40,7 @@ RUN git clone https://github.com/BELABOX/srt.git && \
 # Clone and build belacoder
 RUN git clone https://github.com/mikeful/belacoder-n100.git belacoder && \
 	cd belacoder && \
-	mkdir -p pipelines/custom && \
+	mkdir -p pipeline/custom && \
 	make
 
 # Clone and build srtla
