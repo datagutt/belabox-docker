@@ -12,6 +12,9 @@ services:
       - /dev/snd:/dev/snd
       - /dev/shm:/dev/shm
       - /etc/machine-id:/etc/machine-id
+      - /dev/video0:/dev/video0
+      - /dev/video1:/dev/video1
+      - /dev/video2:/dev/video2
     environment:
       - DISPLAY=$DISPLAY
     ports:
