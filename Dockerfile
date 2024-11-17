@@ -1,5 +1,5 @@
 # Use Ubuntu 24.04 LTS as the base image
-FROM ubuntu:24.04
+FROM jrei/systemd-ubuntu:24.04
 ENV container=docker
 VOLUME /sys/fs/cgroup /run /tmp
 
