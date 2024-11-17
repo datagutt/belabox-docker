@@ -1,5 +1,6 @@
 # Use Ubuntu 24.04 LTS as the base image
 FROM ubuntu:24.04
+ENV container=docker
 
 # Update and install necessary packages
 RUN apt-get update && apt-get dist-upgrade -y && \
