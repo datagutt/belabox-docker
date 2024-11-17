@@ -18,7 +18,7 @@ services:
       - /dev/video2:/dev/video2
     network_mode: host
     environment:
-      - DISPLAY=$DISPLAY
+      DBUS_SYSTEM_BUS_ADDRESS: "unix:path=/host/run/dbus/system_bus_socket"
     cap_add:
       - NET_ADMIN
     # Uncomment if network_mode is not host
