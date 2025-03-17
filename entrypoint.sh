@@ -1,5 +1,6 @@
 #!/bin/sh
+HW=$1
 xhost +
 cd /opt/belaUI
-ls /opt/belacoder
+sed -i "s/hw\": \"n100\"/hw\": \"$HW\"/g" /opt/bela/belaconfig.json
 nodejs ./belaUI.js

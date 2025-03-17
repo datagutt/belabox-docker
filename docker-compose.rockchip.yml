@@ -16,10 +16,24 @@ services:
       - /dev/video0:/dev/video0
       - /dev/video1:/dev/video1
       - /dev/video2:/dev/video2
+      - /dev/iep:/dev/iep
+      - /dev/rga:/dev/rga
+      - /dev/dma_heap:/dev/dma_heap
+      - /dev/mpp_service:/dev/mpp_service
+      - /dev/mpp-service:/dev/mpp-service
+      - /dev/vpu_service:/dev/vpu_service
+      - /dev/vpu-service:/dev/vpu-service
+      - /dev/hevc_service:/dev/hevc_service
+      - /dev/hevc-service:/dev/hevc-service
+      - /dev/rkvdec:/dev/rkvdec
+      - /dev/rkvenc:/dev/rkvenc
+      - /dev/avsd:/dev/avsd
+      - /dev/vepu:/dev/vepu
+      - /dev/h265e:/dev/h265e
     network_mode: host
     environment:
       DBUS_SYSTEM_BUS_ADDRESS: "unix:path=/host/run/dbus/system_bus_socket"
-      HW: "n100"
+      HW: "rk3588"
     cap_add:
       - NET_ADMIN
     # Uncomment if network_mode is not host

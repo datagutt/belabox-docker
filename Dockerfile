@@ -2,6 +2,7 @@
 FROM jrei/systemd-ubuntu:24.04
 ENV container=docker
 ENV DBUS_SYSTEM_BUS_ADDRESS unix:path=/host/run/dbus/system_bus_socket
+ARG HW
 VOLUME /sys/fs/cgroup /run /tmp
 
 # Update and install necessary packages
@@ -67,4 +68,4 @@ EXPOSE 80
 COPY entrypoint.sh /opt/belaUI/entrypoint.sh
 COPY setup.json /opt/belaUI/setup.json
 RUN chmod +x /opt/belaUI/entrypoint.sh
-ENTRYPOINT ["/opt/belaUI/entrypoint.sh"]
+ENTRYPOINT ["/opt/belaUI/entrypoint.sh", $HW]
